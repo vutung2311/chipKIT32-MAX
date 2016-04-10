@@ -26,12 +26,12 @@
 //*	modify it under the terms of the GNU Lesser General Public
 //*	License as published by the Free Software Foundation; either
 //*	version 2.1 of the License, or (at your option) any later version.
-//*	
+//*
 //*	This library is distributed in the hope that it will be useful,
 //*	but WITHOUT ANY WARRANTY; without even the implied warranty of
 //*	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 //*	Lesser General Public License for more details.
-//*	
+//*
 //*	You should have received a copy of the GNU Lesser General
 //*	Public License along with this library; if not, write to the
 //*	Free Software Foundation, Inc., 59 Temple Place, Suite 330,
@@ -340,11 +340,11 @@ extern const uint32_t   digital_pin_to_cn_PGM[];
 ** JP6/JP8 set appropriately (RG2/RG3 position) to access the I2C
 ** signals.
 */
-#define	_TWI_BASE		_I2C1_BASE_ADDRESS
-#define	_TWI_BUS_IRQ	_I2C1_BUS_IRQ
-#define	_TWI_SLV_IRQ	_I2C1_SLAVE_IRQ
-#define	_TWI_MST_IRQ	_I2C1_MASTER_IRQ
-#define	_TWI_VECTOR		_I2C_1_VECTOR
+#define	_TWI_BASE		_I2C2_BASE_ADDRESS
+#define	_TWI_BUS_IRQ	_I2C2_BUS_IRQ
+#define	_TWI_SLV_IRQ	_I2C2_SLAVE_IRQ
+#define	_TWI_MST_IRQ	_I2C2_MASTER_IRQ
+#define	_TWI_VECTOR		_I2C_2_VECTOR
 #define _TWI_IPL_ISR	IPL3SOFT
 #define _TWI_IPL		3
 #define	_TWI_SPL		0
@@ -359,7 +359,7 @@ extern const uint32_t   digital_pin_to_cn_PGM[];
 #define	_DTWI0_IPL_ISR	IPL3SOFT
 #define	_DTWI0_IPL		3
 #define	_DTWI0_SPL		0
-#define _DTWI0_SCL_PIN  46 
+#define _DTWI0_SCL_PIN  46
 #define _DTWI0_SDA_PIN  45
 
 #define	_DTWI1_BASE		_I2C2_BASE_ADDRESS
@@ -368,7 +368,7 @@ extern const uint32_t   digital_pin_to_cn_PGM[];
 #define	_DTWI1_IPL_ISR	IPL3SOFT
 #define	_DTWI1_IPL		3
 #define	_DTWI1_SPL		0
-#define _DTWI1_SCL_PIN  40 
+#define _DTWI1_SCL_PIN  40
 #define _DTWI1_SDA_PIN  39
 
 /* ------------------------------------------------------------ */
