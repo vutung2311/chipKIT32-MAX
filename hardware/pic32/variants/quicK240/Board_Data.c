@@ -1,6 +1,6 @@
 /************************************************************************/
 /*																		*/
-/*	Board_Data.c -- Board Customization Data for PONTECH Quick240	*/
+/*	Board_Data.c -- Board Customization Data for Digilent chipKIT Max32	*/
 /*																		*/
 /************************************************************************/
 /*	Author: Gene Apperson												*/
@@ -9,8 +9,8 @@
 /*  File Description:													*/
 /*																		*/
 /* This file contains the board specific declartions and data structure	*/
-/* to customize the chipKIT MPIDE for use with the PONTECH Quick240		*/
-/* board.															*/
+/* to customize the chipKIT MPIDE for use with the Digilent chipKIT		*/
+/* Max32 board.															*/
 /*																		*/
 /* This code is based on earlier work:									*/
 /*		Copyright (c) 2010, 2011 by Mark Sproul							*/
@@ -402,6 +402,7 @@ const uint16_t digital_pin_to_timer_PGM[] = {
 /* ------------------------------------------------------------ */
 /*		Include Files for Board Customization Functions			*/
 /* ------------------------------------------------------------ */
+
 #if	(OPT_BOARD_INIT != 0)
 #endif
 
@@ -438,6 +439,7 @@ const uint16_t digital_pin_to_timer_PGM[] = {
 **		reset and before the user sketch is run.
 */
 #if	(OPT_BOARD_INIT != 0)
+
 void _board_init(void) {
     _disableSeconaryOscillator();
 }   

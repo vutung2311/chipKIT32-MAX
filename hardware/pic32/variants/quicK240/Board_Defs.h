@@ -1,6 +1,6 @@
 /************************************************************************/
 /*																		*/
-/*	Board_Defs.h --	Board Customization for PONTECH Quick240		*/
+/*	Board_Defs.h --	Board Customization for Digilent chipKIT Max32		*/
 /*																		*/
 /************************************************************************/
 /*	Author: Gene Apperson												*/
@@ -9,8 +9,8 @@
 /*  File Description:													*/
 /*																		*/
 /* This file contains the board specific declartions and data structure	*/
-/* to customize the chipKIT MPIDE for use with the PONTECH Quick240		*/
-/* board.															*/
+/* to customize the chipKIT MPIDE for use with the Digilent chipKIT		*/
+/* Max32 board.															*/
 /*																		*/
 /* This code is based on earlier work:									*/
 /*		Copyright (c) 2010, 2011 by Mark Sproul							*/
@@ -54,7 +54,7 @@
 ** refer to periperhals on the board generically.
 */
 
-#define	_BOARD_NAME_	"PONTECH Quick240"
+#define	_BOARD_NAME_	"chipKIT Max32"
 
 #define VIRTUAL_PROGRAM_BUTTON_TRIS TRISGbits.TRISG15
 #define VIRTUAL_PROGRAM_BUTTON LATGbits.LATG15
@@ -201,10 +201,10 @@
 /* These symbols are defined for compatibility with the original
 ** SPI library and the original pins_arduino.h
 */
-const static uint8_t SS   = 53;		// PIC32 SS2A
-const static uint8_t MOSI = 3;		// PIC32 SDO2A
-const static uint8_t MISO = 11;		// PIC32 SDI2A
-const static uint8_t SCK  = 38;		// PIC32 SCK2A
+static const uint8_t SS   = 53;		// PIC32 SS2A
+static const uint8_t MOSI = 3;		// PIC32 SDO2A
+static const uint8_t MISO = 11;		// PIC32 SDI2A
+static const uint8_t SCK  = 38;		// PIC32 SCK2A
 
 /* The Digilent DSPI library uses these ports.
 */
@@ -383,33 +383,22 @@ extern const uint16_t	digital_pin_to_timer_PGM[];
 /*					SPI Port Declarations						*/
 /* ------------------------------------------------------------ */
 
-/* The standard SPI port uses SPI1.
+/* The SPI libraries uses these ports.
 */
-#define	_SPI_BASE		_SPI1_BASE_ADDRESS
-#define _SPI_ERR_IRQ	_SPI1_ERR_IRQ
-#define	_SPI_RX_IRQ		_SPI1_RX_IRQ
-#define	_SPI_TX_IRQ		_SPI1_TX_IRQ
-#define	_SPI_VECTOR		_SPI_1_VECTOR
-#define	_SPI_IPL_ISR	IPL3SOFT
-#define	_SPI_IPL		3
-#define	_SPI_SPL		0
-
-/* The Digilent DSPI library uses these ports.
-*/
-#define	_DSPI0_BASE			_SPI2_BASE_ADDRESS
-#define	_DSPI0_ERR_IRQ		_SPI2_ERR_IRQ
-#define	_DSPI0_RX_IRQ		_SPI2_RX_IRQ
-#define	_DSPI0_TX_IRQ		_SPI2_TX_IRQ
-#define	_DSPI0_VECTOR		_SPI_2_VECTOR
+#define	_DSPI0_BASE			_SPI1_BASE_ADDRESS
+#define	_DSPI0_ERR_IRQ		_SPI1_ERR_IRQ
+#define	_DSPI0_RX_IRQ		_SPI1_RX_IRQ
+#define	_DSPI0_TX_IRQ		_SPI1_TX_IRQ
+#define	_DSPI0_VECTOR		_SPI_1_VECTOR
 #define	_DSPI0_IPL_ISR		IPL3SOFT
 #define	_DSPI0_IPL			3
 #define	_DSPI0_SPL			0
 
-#define	_DSPI1_BASE			_SPI1_BASE_ADDRESS
-#define	_DSPI1_ERR_IRQ		_SPI1_ERR_IRQ
-#define	_DSPI1_RX_IRQ		_SPI1_RX_IRQ
-#define	_DSPI1_TX_IRQ		_SPI1_TX_IRQ
-#define	_DSPI1_VECTOR		_SPI_1_VECTOR
+#define	_DSPI1_BASE			_SPI2_BASE_ADDRESS
+#define	_DSPI1_ERR_IRQ		_SPI2_ERR_IRQ
+#define	_DSPI1_RX_IRQ		_SPI2_RX_IRQ
+#define	_DSPI1_TX_IRQ		_SPI2_TX_IRQ
+#define	_DSPI1_VECTOR		_SPI_2_VECTOR
 #define	_DSPI1_IPL_ISR		IPL3SOFT
 #define	_DSPI1_IPL			3
 #define	_DSPI1_SPL			0
@@ -510,6 +499,14 @@ extern const uint16_t	digital_pin_to_timer_PGM[];
 /* ------------------------------------------------------------ */
 
 #endif	//OPT_BOARD_INTERNAL
+/* ------------------------------------------------------------ */
+/*					Defines for Network                  */
+/* ------------------------------------------------------------ */
+#define _IM8720PHY_PIN_CONFIG_
+
+#define PHY_TRIS            (TRISEbits.TRISE9)        // = 0; output
+#define PHY_ENABLE          (LATEbits.LATE9)          // = 1; to enable
+#define PHY_ADDRESS         0x5                     // something other than 0 or 1 (although 1 is okay)
 
 /* ------------------------------------------------------------ */
 
